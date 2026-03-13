@@ -1,0 +1,462 @@
+
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>CU WATER — Premium Hydration Solutions</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Cormorant+Garamond:wght@300;400;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+<style>
+:root {
+--ink: #0a0f1e;
+--deep: #072a45;
+--ocean: #0b4f7a;
+--wave: #1a7fbf;
+--sky: #5cb8e4;
+--foam: #d6eef9;
+--white: #f7fbff;
+--gold: #c9a84c;
+--gold-light: #f0d080;
+--gray: #6b8a9e;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+background: var(--white);
+color: var(--ink);
+font-family: 'Cormorant Garamond', serif;
+font-size: 18px;
+line-height: 1.7;
+overflow-x: hidden;
+}
+
+/* HEADER */
+header { background: var(--deep); position: sticky; top: 0; z-index: 100; border-bottom: 3px solid var(--gold); }
+.header-top { background: var(--ink); text-align: center; padding: 6px 20px; font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 3px; color: var(--gold); text-transform: uppercase; }
+.header-main { display: flex; align-items: center; justify-content: space-between; padding: 18px 48px; max-width: 1400px; margin: 0 auto; }
+.logo { display: flex; flex-direction: column; align-items: flex-start; text-decoration: none; }
+.logo-name { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 900; color: var(--white); letter-spacing: -1px; line-height: 1; }
+.logo-name span { color: var(--sky); }
+.logo-tagline { font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 4px; color: var(--gold); text-transform: uppercase; margin-top: 3px; }
+nav { display: flex; gap: 32px; align-items: center; }
+nav a { font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.75); text-decoration: none; transition: color 0.3s; position: relative; }
+nav a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--gold); transition: width 0.3s; }
+nav a:hover { color: var(--white); }
+nav a:hover::after { width: 100%; }
+.nav-cta { background: var(--gold) !important; color: var(--ink) !important; padding: 10px 22px; font-weight: 700; }
+.nav-cta:hover { background: var(--gold-light) !important; }
+.nav-cta::after { display: none !important; }
+
+/* HERO */
+.hero { position: relative; background: linear-gradient(135deg, var(--ink) 0%, var(--deep) 40%, var(--ocean) 100%); overflow: hidden; padding: 100px 48px 80px; }
+.hero-bubbles { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.bubble { position: absolute; border-radius: 50%; background: radial-gradient(circle at 30% 30%, rgba(92,184,228,0.3), rgba(11,79,122,0.05)); border: 1px solid rgba(92,184,228,0.15); animation: floatUp linear infinite; }
+@keyframes floatUp { 0% { transform: translateY(110%) scale(0.8); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 0.6; } 100% { transform: translateY(-110%) scale(1.1); opacity: 0; } }
+.bubble:nth-child(1) { width: 80px; height: 80px; left: 5%; animation-duration: 14s; }
+.bubble:nth-child(2) { width: 40px; height: 40px; left: 15%; animation-duration: 10s; animation-delay: 2s; }
+.bubble:nth-child(3) { width: 120px; height: 120px; left: 25%; animation-duration: 18s; animation-delay: 4s; }
+.bubble:nth-child(4) { width: 60px; height: 60px; left: 40%; animation-duration: 12s; animation-delay: 1s; }
+.bubble:nth-child(5) { width: 90px; height: 90px; left: 55%; animation-duration: 16s; animation-delay: 3s; }
+.bubble:nth-child(6) { width: 50px; height: 50px; left: 70%; animation-duration: 11s; animation-delay: 5s; }
+.bubble:nth-child(7) { width: 100px; height: 100px; left: 82%; animation-duration: 20s; animation-delay: 0.5s; }
+.bubble:nth-child(8) { width: 30px; height: 30px; left: 90%; animation-duration: 9s; animation-delay: 7s; }
+.hero-inner { position: relative; z-index: 2; max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.hero-label { font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 4px; color: var(--gold); text-transform: uppercase; margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
+.hero-label::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); }
+.hero-title { font-family: 'Playfair Display', serif; font-size: clamp(48px, 6vw, 86px); font-weight: 900; color: var(--white); line-height: 1; margin-bottom: 28px; }
+.hero-title em { font-style: italic; color: var(--sky); }
+.hero-desc { font-size: 20px; color: rgba(214, 238, 249, 0.85); max-width: 480px; margin-bottom: 40px; font-weight: 300; }
+.hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+.btn-primary { background: var(--gold); color: var(--ink); padding: 16px 36px; font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; text-decoration: none; transition: all 0.3s; border: 2px solid var(--gold); display: inline-block; }
+.btn-primary:hover { background: transparent; color: var(--gold); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,0.3); }
+.btn-secondary { background: transparent; color: var(--white); padding: 16px 36px; font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: 400; text-decoration: none; border: 2px solid rgba(255,255,255,0.4); transition: all 0.3s; display: inline-block; }
+.btn-secondary:hover { border-color: var(--sky); color: var(--sky); transform: translateY(-2px); }
+.hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+.stat-box { padding: 30px 20px; text-align: center; background: rgba(7, 42, 69, 0.7); border: 1px solid rgba(255,255,255,0.08); transition: background 0.3s; }
+.stat-box:hover { background: rgba(26, 127, 191, 0.25); }
+.stat-num { font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 900; color: var(--sky); line-height: 1; }
+.stat-unit { font-family: 'Space Mono', monospace; font-size: 14px; color: var(--gold); }
+.stat-label { font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 2px; color: rgba(255,255,255,0.5); text-transform: uppercase; margin-top: 8px; }
+
+/* PRODUCTS STRIP */
+.products-strip { background: linear-gradient(90deg, var(--deep) 0%, var(--ocean) 50%, var(--deep) 100%); padding: 72px 48px; text-align: center; }
+.section-eyebrow { font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--wave); margin-bottom: 8px; }
+.section-title { font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 900; color: var(--deep); line-height: 1.1; margin-bottom: 12px; }
+.section-title em { font-style: italic; color: var(--wave); }
+.section-divider { width: 48px; height: 3px; background: linear-gradient(90deg, var(--gold), var(--sky)); margin-bottom: 36px; }
+.products-strip .section-title { color: var(--white); }
+.products-strip .section-eyebrow { color: var(--gold); }
+.products-strip .section-divider { margin: 12px auto 48px; }
+.products-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; max-width: 1300px; margin: 0 auto; }
+.product-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); padding: 36px 24px; text-align: center; transition: all 0.4s; cursor: pointer; position: relative; overflow: hidden; }
+.product-card::before { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--gold); transform: scaleX(0); transition: transform 0.4s; }
+.product-card:hover { background: rgba(255,255,255,0.12); transform: translateY(-6px); border-color: rgba(92,184,228,0.4); }
+.product-card:hover::before { transform: scaleX(1); }
+.pc-icon { font-size: 52px; margin-bottom: 18px; display: block; }
+.pc-name { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--white); margin-bottom: 10px; }
+.pc-desc { font-size: 14px; color: rgba(214,238,249,0.7); font-weight: 300; line-height: 1.6; margin-bottom: 18px; }
+.pc-price { font-family: 'Space Mono', monospace; font-size: 13px; color: var(--gold); letter-spacing: 2px; }
+
+/* MAIN LAYOUT */
+.main-wrapper { max-width: 1400px; margin: 0 auto; padding: 60px 48px; display: grid; grid-template-columns: 1fr 360px; gap: 60px; align-items: start; }
+
+/* FEATURED POST */
+.featured-post { position: relative; background: var(--deep); overflow: hidden; margin-bottom: 48px; transition: transform 0.4s; }
+.featured-post:hover { transform: translateY(-4px); }
+.featured-image { width: 100%; height: 340px; background: linear-gradient(135deg, #072a45, #0b4f7a, #1a7fbf); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+.featured-image::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 50%, rgba(92,184,228,0.4), transparent 60%), radial-gradient(ellipse at 80% 20%, rgba(201,168,76,0.2), transparent 50%); }
+.water-drop-icon { font-size: 120px; opacity: 0.2; position: absolute; right: 40px; bottom: -20px; }
+.featured-badge { position: absolute; top: 20px; left: 20px; background: var(--gold); color: var(--ink); font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; padding: 6px 14px; font-weight: 700; }
+.featured-content { padding: 36px; }
+.post-meta { font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 2px; color: var(--sky); text-transform: uppercase; margin-bottom: 14px; }
+.post-title { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--white); margin-bottom: 14px; line-height: 1.2; }
+.post-excerpt { color: rgba(214,238,249,0.75); font-size: 17px; font-weight: 300; margin-bottom: 24px; }
+.read-more { font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: gap 0.3s; }
+.read-more:hover { gap: 14px; }
+.read-more::after { content: '→'; }
+
+/* POST GRID */
+.posts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-bottom: 48px; }
+.post-card { border: 1px solid var(--foam); overflow: hidden; transition: all 0.3s; background: var(--white); cursor: pointer; }
+.post-card:hover { border-color: var(--sky); box-shadow: 0 12px 36px rgba(11,79,122,0.12); transform: translateY(-4px); }
+.card-image { height: 180px; background: linear-gradient(135deg, var(--deep), var(--ocean)); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.card-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 40%, rgba(7,42,69,0.6)); }
+.card-img-icon { font-size: 60px; opacity: 0.3; }
+.card-img-label { position: absolute; bottom: 12px; left: 16px; font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 3px; color: var(--sky); text-transform: uppercase; z-index: 1; }
+.card-body { padding: 22px; }
+.card-tag { font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--wave); margin-bottom: 8px; }
+.card-title { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; color: var(--deep); line-height: 1.3; margin-bottom: 10px; }
+.card-excerpt { font-size: 15px; color: var(--gray); font-weight: 300; line-height: 1.6; margin-bottom: 16px; }
+.card-footer { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--foam); padding-top: 14px; }
+.card-date { font-family: 'Space Mono', monospace; font-size: 9px; color: var(--gray); letter-spacing: 1px; }
+.card-link { font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 1px; color: var(--wave); text-decoration: none; text-transform: uppercase; }
+
+/* DISTRIBUTOR BANNER */
+.distributor-banner { background: linear-gradient(135deg, var(--ink), var(--deep)); padding: 48px; position: relative; overflow: hidden; margin-bottom: 48px; border-left: 4px solid var(--gold); }
+.distributor-banner::before { content: '◈'; position: absolute; right: 40px; top: 50%; transform: translateY(-50%); font-size: 120px; color: rgba(92,184,228,0.05); }
+.dist-eyebrow { font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 4px; color: var(--gold); text-transform: uppercase; margin-bottom: 12px; }
+.dist-title { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--white); font-weight: 700; margin-bottom: 16px; }
+.dist-body { color: rgba(214,238,249,0.8); font-size: 17px; max-width: 600px; margin-bottom: 28px; font-weight: 300; }
+.dist-perks { display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 28px; }
+.perk { display: flex; align-items: center; gap: 8px; font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 1px; color: var(--sky); }
+.perk-dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
+
+/* SIDEBAR */
+.sidebar { display: flex; flex-direction: column; gap: 36px; }
+.sidebar-widget { border: 1px solid var(--foam); overflow: hidden; }
+.widget-header { background: var(--deep); padding: 14px 22px; display: flex; align-items: center; gap: 10px; }
+.widget-title { font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--white); }
+.widget-title-dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
+.widget-body { padding: 22px; background: var(--white); }
+.about-logo { font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 900; color: var(--deep); line-height: 1; margin-bottom: 4px; }
+.about-logo span { color: var(--wave); }
+.about-tagline { font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 3px; color: var(--gold); text-transform: uppercase; margin-bottom: 16px; }
+.about-text { font-size: 15px; color: var(--gray); font-weight: 300; line-height: 1.7; }
+.product-list { display: flex; flex-direction: column; gap: 0; }
+.product-item { display: flex; align-items: center; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--foam); cursor: pointer; transition: all 0.2s; }
+.product-item:last-child { border-bottom: none; }
+.product-item:hover .product-name { color: var(--wave); }
+.product-icon { width: 44px; height: 44px; background: linear-gradient(135deg, var(--foam), #c0dff4); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+.product-info { flex: 1; }
+.product-name { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 700; color: var(--deep); transition: color 0.2s; }
+.product-sub { font-family: 'Space Mono', monospace; font-size: 10px; color: var(--gray); letter-spacing: 1px; }
+.product-arrow { color: var(--sky); font-size: 16px; }
+.badge-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.quality-badge { background: var(--foam); padding: 14px; text-align: center; border: 1px solid rgba(92,184,228,0.2); transition: all 0.3s; cursor: default; }
+.quality-badge:hover { background: var(--deep); border-color: var(--deep); }
+.quality-badge:hover .badge-icon, .quality-badge:hover .badge-text { color: var(--white) !important; }
+.badge-icon { font-size: 22px; margin-bottom: 6px; display: block; }
+.badge-text { font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--deep); font-weight: 700; }
+.contact-list { list-style: none; }
+.contact-item { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--foam); font-size: 14px; color: var(--gray); }
+.contact-item:last-child { border-bottom: none; }
+.contact-label { font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 2px; color: var(--wave); text-transform: uppercase; min-width: 60px; padding-top: 2px; }
+.contact-value { color: var(--deep); font-weight: 400; }
+
+/* TESTIMONIALS */
+.testimonials { background: var(--foam); padding: 80px 48px; }
+.testimonials-inner { max-width: 1400px; margin: 0 auto; text-align: center; }
+.testimonials .section-divider { margin: 0 auto 48px; }
+.testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.testi-card { background: var(--white); padding: 36px; border-top: 3px solid var(--wave); text-align: left; transition: all 0.3s; }
+.testi-card:hover { box-shadow: 0 16px 48px rgba(11,79,122,0.12); transform: translateY(-4px); }
+.testi-quote { font-family: 'Playfair Display', serif; font-size: 60px; color: var(--sky); line-height: 0.5; margin-bottom: 20px; display: block; }
+.testi-text { font-size: 17px; color: var(--deep); font-weight: 300; line-height: 1.7; font-style: italic; margin-bottom: 24px; }
+.testi-author { font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--wave); font-weight: 700; }
+.testi-company { font-family: 'Space Mono', monospace; font-size: 10px; color: var(--gray); letter-spacing: 1px; margin-top: 4px; }
+
+/* CTA BANNER */
+.cta-banner { background: var(--ink); padding: 80px 48px; text-align: center; position: relative; overflow: hidden; }
+.cta-banner::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(26,127,191,0.15), transparent 70%); }
+.cta-sub { font-size: 20px; color: rgba(214,238,249,0.75); max-width: 560px; margin: 0 auto 40px; font-weight: 300; }
+.cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+/* FOOTER */
+footer { background: #040c16; padding: 60px 48px 32px; color: rgba(255,255,255,0.5); }
+.footer-inner { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+.footer-desc { font-size: 14px; color: rgba(255,255,255,0.4); margin-top: 14px; line-height: 1.8; font-weight: 300; }
+.footer-heading { font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-links a { font-size: 14px; color: rgba(255,255,255,0.45); text-decoration: none; font-family: 'Cormorant Garamond', serif; transition: color 0.3s; }
+.footer-links a:hover { color: var(--sky); }
+.footer-bottom { max-width: 1400px; margin: 0 auto; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: space-between; }
+.footer-copy { font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1px; color: rgba(255,255,255,0.25); }
+.footer-socials { display: flex; gap: 16px; }
+.social-link { width: 32px; height: 32px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; text-decoration: none; color: rgba(255,255,255,0.4); font-size: 14px; transition: all 0.3s; }
+.social-link:hover { border-color: var(--sky); color: var(--sky); background: rgba(92,184,228,0.1); }
+
+/* ANIMATIONS */
+.fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 1024px) {
+.main-wrapper { grid-template-columns: 1fr; }
+.hero-inner { grid-template-columns: 1fr; gap: 40px; }
+.posts-grid { grid-template-columns: 1fr; }
+.products-cards { grid-template-columns: 1fr 1fr; }
+.testi-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+.footer-inner { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+.header-main { padding: 16px 20px; }
+nav { display: none; }
+.hero { padding: 60px 20px; }
+.main-wrapper, .products-strip, .testimonials, .cta-banner { padding: 48px 20px; }
+footer { padding: 48px 20px 24px; }
+.footer-inner { grid-template-columns: 1fr; gap: 32px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="header-top">🏆 Trusted by 50+ Distributors Nationwide &nbsp;|&nbsp; Certified Premium Quality &nbsp;|&nbsp; Same-Day Dispatch Available</div>
+<div class="header-main">
+<a href="#" class="logo">
+<div class="logo-name">CU <span>WATER</span></div>
+<div class="logo-tagline">Premium Hydration Solutions</div>
+</a>
+<nav>
+<a href="#about">About</a>
+<a href="#products">Products</a>
+<a href="#distributors">Distributors</a>
+<a href="#blog">News</a>
+<a href="#contact" class="nav-cta">Get Quote</a>
+</nav>
+</div>
+</header>
+
+<section class="hero">
+<div class="hero-bubbles">
+<div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>
+<div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>
+<div class="bubble"></div><div class="bubble"></div>
+</div>
+<div class="hero-inner">
+<div>
+<div class="hero-label">Established Excellence</div>
+<h1 class="hero-title">Pure Water.<br><em>Serious Business.</em></h1>
+<p class="hero-desc">CU Water delivers premium hydration products built for scale. Partner with us and bring certified-quality water to every doorstep in your territory.</p>
+<div class="hero-buttons">
+<a href="#distributors" class="btn-primary">Become a Distributor</a>
+<a href="#products" class="btn-secondary">View Products</a>
+</div>
+</div>
+<div>
+<div class="hero-stats">
+<div class="stat-box">
+<div class="stat-num">50<span class="stat-unit">+</span></div>
+<div class="stat-label">Active Distributors</div>
+</div>
+<div class="stat-box">
+<div class="stat-num">99<span class="stat-unit">%</span></div>
+<div class="stat-label">Purity Rating</div>
+</div>
+<div class="stat-box">
+<div class="stat-num">1M<span class="stat-unit">+</span></div>
+<div class="stat-label">Liters Delivered</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="products-strip" id="products">
+<div class="section-eyebrow">Our Range</div>
+<h2 class="section-title">The <em>CU Water</em> Collection</h2>
+<div class="section-divider"></div>
+<div class="products-cards">
+<div class="product-card fade-in"><span class="pc-icon">💧</span><div class="pc-name">CU Mineral-rich</div><div class="pc-desc">Naturally filtered still water. Crystal-clear purity direct from certified sources.</div><div class="pc-price">500ml·1L·2L.5L·10L</div></div>
+<div class="product-card fade-in"><span class="pc-icon">🫧</span><div class="pc-name">CU Copper</div><div class="pc-desc">Drink Pure, Live Pure, refreshing bite. Premium Copper water for upscale venues.</div><div class="pc-price">500ml·1L.2L</div></div>
+<div class="product-card fade-in"><span class="pc-icon">🏔️</span><div class="pc-name">CU Alpine</div><div class="pc-desc">Sourced from high-altitude springs. Mineral-rich and exceptionally balanced.</div><div class="pc-price">750ml · 1.5L</div></div>
+<div class="product-card fade-in"><span class="pc-icon">📦</span><div class="pc-name">CU Bulk</div><div class="pc-desc">Large-format supply for offices, events, and industrial use. Distributor pricing available.</div><div class="pc-price">330ml.500ml.1L.2l.10L·20L· Custom Labeling</div></div>
+</div>
+</section>
+
+<div class="main-wrapper" id="blog">
+<main>
+<div class="section-eyebrow">Latest Updates</div>
+<h2 class="section-title">News &amp; <em>Insights</em></h2>
+<div class="section-divider"></div>
+
+<article class="featured-post fade-in">
+<div class="featured-image">
+<div class="water-drop-icon">💧</div>
+<div class="featured-badge">Featured Story</div>
+<div style="position:relative;z-index:1;text-align:center;color:white;">
+<div style="font-family:'Playfair Display',serif;font-size:22px;font-style:italic;opacity:0.7;">CU Water</div>
+<div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:3px;color:#5cb8e4;margin-top:6px;">DISTRIBUTOR REPORT 2026</div>
+</div>
+</div>
+<div class="featured-content">
+<div class="post-meta">March 2026 &nbsp;·&nbsp; Distributor Report &nbsp;·&nbsp; 8 min read</div>
+<h2 class="post-title">CU Water Expands Distribution Network to 12 New Regions — Record Growth Recorded</h2>
+<p class="post-excerpt">Our Q1 results confirm what we've always believed: premium water, delivered with precision, wins markets. CU Water onboarded 10 new distributor partners this quarter, expanding our reach into emerging territories while maintaining our signature quality standards.</p>
+<a href="#" class="read-more">Read Full Report</a>
+</div>
+</article>
+
+<div class="posts-grid">
+<article class="post-card fade-in">
+<div class="card-image"><span class="card-img-icon">🧪</span><div class="card-img-label">Quality Control</div></div>
+<div class="card-body">
+<div class="card-tag">Product Quality</div>
+<h3 class="card-title">How CU Water Achieves 99.9% Purity on Every Batch</h3>
+<p class="card-excerpt">A deep dive into our multi-stage filtration process and the ISO-certified lab testing that sets us apart from the competition.</p>
+<div class="card-footer"><span class="card-date">March 25, 2026</span><a href="#" class="card-link">Read →</a></div>
+</div>
+</article>
+<article class="post-card fade-in">
+<div class="card-image"><span class="card-img-icon">🤝</span><div class="card-img-label">Partnerships</div></div>
+<div class="card-body">
+<div class="card-tag">Distribution</div>
+<h3 class="card-title">Why 50 Distributors Trust CU Water as Their Primary Supplier</h3>
+<p class="card-excerpt">From competitive margins to dedicated account managers — here's what makes our distributor program stand out.</p>
+<div class="card-footer"><span class="card-date">March 30, 2026</span><a href="#" class="card-link">Read →</a></div>
+</div>
+</article>
+<article class="post-card fade-in">
+<div class="card-image"><span class="card-img-icon">🌿</span><div class="card-img-label">Sustainability</div></div>
+<div class="card-body">
+<div class="card-tag">Environment</div>
+<h3 class="card-title">CU Water's 2026 Sustainability Report: Greener Packaging, Bigger Impact</h3>
+<p class="card-excerpt">We've reduced plastic usage by 38% and introduced our first fully recyclable 5L container ahead of schedule.</p>
+<div class="card-footer"><span class="card-date">March 28, 2026</span><a href="#" class="card-link">Read →</a></div>
+</div>
+</article>
+<article class="post-card fade-in">
+<div class="card-image"><span class="card-img-icon">📈</span><div class="card-img-label">Market</div></div>
+<div class="card-body">
+<div class="card-tag">Industry Trends</div>
+<h3 class="card-title">Premium Water Market to Reach $42B by 2027: What It Means for Distributors</h3>
+<p class="card-excerpt">Consumer demand for premium hydration is booming. Position yourself now with the right supplier to capture market share.</p>
+<div class="card-footer"><span class="card-date">March 28, 2026</span><a href="#" class="card-link">Read →</a></div>
+</div>
+</article>
+</div>
+
+<div class="distributor-banner fade-in" id="distributors">
+<div class="dist-eyebrow">🤝 Partner Program</div>
+<h2 class="dist-title">Ready to Distribute CU Water in Your Region?</h2>
+<p class="dist-body">Join our exclusive distributor network and access wholesale pricing, dedicated support, marketing materials, and priority stock allocation.</p>
+<div class="dist-perks">
+<div class="perk"><span class="perk-dot"></span>Competitive Wholesale Margins</div>
+<div class="perk"><span class="perk-dot"></span>Dedicated Account Manager</div>
+<div class="perk"><span class="perk-dot"></span>Same-Day Dispatch</div>
+<div class="perk"><span class="perk-dot"></span>Exclusive Territory Rights</div>
+<div class="perk"><span class="perk-dot"></span>Full Marketing Support</div>
+<div class="perk"><span class="perk-dot"></span>Flexible Payment Terms</div>
+</div>
+<a href="#contact" class="btn-primary">Apply Now</a>
+</div>
+</main>
+
+<aside class="sidebar" id="about">
+<div class="sidebar-widget fade-in">
+<div class="widget-header"><span class="widget-title-dot"></span><span class="widget-title">About CU Water</span></div>
+<div class="widget-body">
+<div class="about-logo">CU <span>WATER</span></div>
+<div class="about-tagline">Premium Since 2026</div>
+<p class="about-text">At CU WATER, we believe that pure water is the foundation of a healthy life. Our water goes through advanced purification processes to ensure every drop is clean, safe, and refreshing. We follow strict quality standards to deliver premium drinking water to homes, businesses, and distributors. CU WATER is committed to consistency, hygiene, and reliability in every bottle we produce. Our goal is to provide crystal-clear hydration that customers can trust every day. With modern technology and careful testing, we maintain the highest level of purity. We also focus on building strong partnerships with our distributors by ensuring dependable supply and excellent service. CU WATER represents freshness, safety, and quality in every sip. As we grow, our mission remains simple—deliver the best drinking water to every community we serve. Choose CU WATER and experience purity the way it should be.</p>
+</div>
+</div>
+<div class="sidebar-widget fade-in">
+<div class="widget-header"><span class="widget-title-dot"></span><span class="widget-title">Product Lines</span></div>
+<div class="widget-body" style="padding: 8px 22px;">
+<div class="product-list">
+<div class="product-item"><div class="product-icon">💧</div><div class="product-info"><div class="product-name">CU Mineral-rich</div><div class="product-sub">500ml to 10L</div></div><span class="product-arrow">›</span></div>
+<div class="product-item"><div class="product-icon">🫧</div><div class="product-info"><div class="product-name">CU Copper</div><div class="product-sub">330ml to 1.5L</div></div><span class="product-arrow">›</span></div>
+<div class="product-item"><div class="product-icon">🏔️</div><div class="product-info"><div class="product-name">CU Alpine</div><div class="product-sub">750ml to 1.5L</div></div><span class="product-arrow">›</span></div>
+<div class="product-item"><div class="product-icon">📦</div><div class="product-info"><div class="product-name">CU Bulk</div><div class="product-sub">330mL to 10L and Custom Labeling</div></div><span class="product-arrow">›</span></div>
+</div>
+</div>
+</div>
+<div class="sidebar-widget fade-in">
+<div class="widget-header"><span class="widget-title-dot"></span><span class="widget-title">Certifications</span></div>
+<div class="widget-body">
+<div class="badge-grid">
+<div class="quality-badge"><span class="badge-icon">🏅</span><div class="badge-text">ISO 9001</div></div>
+<div class="quality-badge"><span class="badge-icon">✅</span><div class="badge-text">FDA Approved</div></div>
+<div class="quality-badge"><span class="badge-icon">🌿</span><div class="badge-text">Eco Certified</div></div>
+<div class="quality-badge"><span class="badge-icon">🧬</span><div class="badge-text">Lab Tested</div></div>
+</div>
+</div>
+</div>
+<div class="sidebar-widget fade-in" id="contact">
+<div class="widget-header"><span class="widget-title-dot"></span><span class="widget-title">Contact Us</span></div>
+<div class="widget-body" style="padding: 0 22px;">
+<ul class="contact-list">
+<li class="contact-item"><span class="contact-label">Phone</span><span class="contact-value">+91 9100805905 </span></li>
+<li class="contact-item"><span class="contact-label">Email</span><span class="contact-value">trade@cuwater.com</span></li>
+<li class="contact-item"><span class="contact-label">Hours</span><span class="contact-value">Mon-Sat, 7am – 10pm</span></li>
+<li class="contact-item"><span class="contact-label">Trade</span><span class="contact-value">distributors@cuwater.com</span></li>
+</ul>
+</div>
+</div>
+</aside>
+</div>
+
+<section class="cta-banner">
+<div style="position:relative;z-index:1;">
+<div class="section-eyebrow" style="color:var(--gold);">Limited Territories Available</div>
+<h2 class="section-title" style="color:white;font-size:clamp(32px,4vw,52px);">Start Distributing <em style="color:var(--sky);">CU Water</em><br>in Your Area Today</h2>
+<div class="section-divider" style="margin:16px auto 20px;"></div>
+<p class="cta-sub">Territories are being allocated now. Apply for exclusive distribution rights before your region is taken.</p>
+<div class="cta-buttons">
+<a href="#contact" class="btn-primary">Apply for Distributorship</a>
+<a href="#products" class="btn-secondary">View Full Catalogue</a>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="footer-inner">
+<div>
+<div style="font-family:'Playfair Display',serif;font-size:32px;font-weight:900;color:white;line-height:1;">CU <span style="color:#5cb8e4;">WATER</span></div>
+<div style="font-family:'Space Mono',monospace;font-size:9px;letter-spacing:4px;color:#c9a84c;text-transform:uppercase;margin-top:4px;">Premium Hydration Solutions</div>
+<p class="footer-desc">Pure water. Serious business. Trusted by distributors across the nation since 2026.</p>
+</div>
+<div><div class="footer-heading">Products</div><ul class="footer-links"><li><a href="#">CU Mineral-rich</a></li><li><a href="#">CU Copper</a></li><li><a href="#">CU Alpine</a></li><li><a href="#">CU Bulk</a></li><li><a href="#">Custom Orders</a></li></ul></div>
+<div><div class="footer-heading">Partners</div><ul class="footer-links"><li><a href="#">Distributor Program</a></li><li><a href="#">Wholesale Pricing</a></li><li><a href="#">Territory Map</a></li><li><a href="#">Apply Now</a></li><li><a href="#">Partner Portal</a></li></ul></div>
+<div><div class="footer-heading">Company</div><ul class="footer-links"><li><a href="#">About Us</a></li><li><a href="#">Quality Standards</a></li><li><a href="#">Sustainability</a></li><li><a href="#">News & Blog</a></li><li><a href="#">Contact</a></li></ul></div>
+</div>
+<div class="footer-bottom">
+<div class="footer-copy">© 2025 CU WATER. All rights reserved.</div>
+<div class="footer-socials">
+<a href="#" class="social-link">in</a>
+<a href="#" class="social-link">tw</a>
+<a href="#" class="social-link">ig</a>
+<a href="#" class="social-link">fb</a>
+</div>
+</div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-in').forEach((el, i) => { el.style.transitionDelay = (i % 4) * 0.1 + 's'; obs.observe(el); });
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+a.addEventListener('click', e => { const t = document.querySelector(a.getAttribute('href')); if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); } });
+});
+</script>
+</body>
+</html>
